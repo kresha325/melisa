@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import Link from "next/link";
+import { InternalLink } from "@/components/InternalLink";
 import { COMPANY } from "@/lib/company";
 import { SITE_URL } from "@/lib/site";
 
@@ -183,9 +183,9 @@ export default function ContactForm() {
             <p className="text-xs text-gray-500 text-center">
               Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß
               unserer{" "}
-              <Link href="/datenschutz" className="text-brand-green underline">
-                Datenschutzerklärung
-              </Link>{" "}
+                  <InternalLink href="/datenschutz" className="text-brand-green underline">
+                    Datenschutzerklärung
+                  </InternalLink>{" "}
               zu.
             </p>
           </form>

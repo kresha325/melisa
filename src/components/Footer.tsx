@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Logo from "@/components/Logo";
+import { InternalLink } from "@/components/InternalLink";
 import { COMPANY } from "@/lib/company";
 
 export default function Footer() {
@@ -22,24 +22,24 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Leistungen</h4>
             <ul className="space-y-2 text-green-200/60 text-sm">
               <li>
-                <Link href="/#leistungen" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#leistungen" className="hover:text-brand-gold transition-colors">
                   Strom optimieren
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/#leistungen" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#leistungen" className="hover:text-brand-gold transition-colors">
                   Gas optimieren
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/#rechner" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#rechner" className="hover:text-brand-gold transition-colors">
                   Sparrechner
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/#faq" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#faq" className="hover:text-brand-gold transition-colors">
                   FAQ
-                </Link>
+                </InternalLink>
               </li>
             </ul>
           </div>
@@ -48,29 +48,29 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Unternehmen</h4>
             <ul className="space-y-2 text-green-200/60 text-sm">
               <li>
-                <Link href="/#ueber-uns" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#ueber-uns" className="hover:text-brand-gold transition-colors">
                   Über uns
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/#ablauf" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#ablauf" className="hover:text-brand-gold transition-colors">
                   So funktioniert&apos;s
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/#kontakt" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/#kontakt" className="hover:text-brand-gold transition-colors">
                   Kontakt
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/datenschutz" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/datenschutz" className="hover:text-brand-gold transition-colors">
                   Datenschutz
-                </Link>
+                </InternalLink>
               </li>
               <li>
-                <Link href="/impressum" className="hover:text-brand-gold transition-colors">
+                <InternalLink href="/impressum" className="hover:text-brand-gold transition-colors">
                   Impressum
-                </Link>
+                </InternalLink>
               </li>
             </ul>
           </div>
@@ -106,12 +106,12 @@ export default function Footer() {
             vorbehalten.
           </p>
           <div className="flex gap-4 text-green-200/40 text-sm">
-            <Link href="/impressum" className="hover:text-brand-gold transition-colors">
+            <InternalLink href="/impressum" className="hover:text-brand-gold transition-colors">
               Impressum
-            </Link>
-            <Link href="/datenschutz" className="hover:text-brand-gold transition-colors">
+            </InternalLink>
+            <InternalLink href="/datenschutz" className="hover:text-brand-gold transition-colors">
               Datenschutz
-            </Link>
+            </InternalLink>
           </div>
         </div>
       </div>

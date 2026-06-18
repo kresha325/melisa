@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
+import { InternalLink } from "@/components/InternalLink";
 import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
@@ -126,9 +127,9 @@ export default function ImpressumPage() {
         <p>
           Informationen zur Verarbeitung personenbezogener Daten finden Sie in
           unserer{" "}
-          <a href="/datenschutz" className="text-brand-green underline">
+          <InternalLink href="/datenschutz" className="text-brand-green underline">
             Datenschutzerklärung
-          </a>
+          </InternalLink>
           .
         </p>
       </section>
