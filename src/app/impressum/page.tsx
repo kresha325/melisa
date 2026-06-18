@@ -19,7 +19,9 @@ export default function ImpressumPage() {
           <br />
           Energieberatung & Tarifoptimierung
           <br />
-          Deutschland
+          {COMPANY.address}
+          <br />
+          {COMPANY.country}
         </p>
       </section>
 
@@ -32,12 +34,11 @@ export default function ImpressumPage() {
           </a>
           <br />
           E-Mail:{" "}
-          <a
-            href={`mailto:${COMPANY.email}`}
-            className="text-brand-green"
-          >
+          <a href={`mailto:${COMPANY.email}`} className="text-brand-green">
             {COMPANY.email}
           </a>
+          <br />
+          Erreichbarkeit: {COMPANY.hours}
         </p>
       </section>
 
@@ -46,9 +47,41 @@ export default function ImpressumPage() {
           Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
         </h2>
         <p>
-          {COMPANY.name}
+          {COMPANY.responsiblePerson}
           <br />
-          {COMPANY.email}
+          {COMPANY.address}
+          <br />
+          {COMPANY.country}
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold text-brand-navy mb-3">
+          EU-Streitschlichtung
+        </h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur
+          Online-Streitbeilegung (OS) bereit:{" "}
+          <a
+            href="https://ec.europa.eu/consumers/odr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-green"
+          >
+            https://ec.europa.eu/consumers/odr/
+          </a>
+          . Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold text-brand-navy mb-3">
+          Verbraucherstreitbeilegung / Universalschlichtungsstelle
+        </h2>
+        <p>
+          Wir sind nicht verpflichtet und nicht bereit, an
+          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          teilzunehmen.
         </p>
       </section>
 
@@ -72,28 +105,31 @@ export default function ImpressumPage() {
         <p>
           Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
           Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
-          fremden Inhalte auch keine Gewähr übernehmen.
+          fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+          verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.
+        </p>
+        <h3 className="font-medium text-brand-navy mt-4 mb-2">
+          Urheberrecht
+        </h3>
+        <p>
+          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen
+          Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung bedürfen der
+          schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold text-brand-navy mb-3">
-          Streitschlichtung
+          Datenschutz
         </h2>
         <p>
-          Die Europäische Kommission stellt eine Plattform zur
-          Online-Streitbeilegung (OS) bereit:{" "}
-          <a
-            href="https://ec.europa.eu/consumers/odr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-green"
-          >
-            https://ec.europa.eu/consumers/odr/
+          Informationen zur Verarbeitung personenbezogener Daten finden Sie in
+          unserer{" "}
+          <a href="/datenschutz" className="text-brand-green underline">
+            Datenschutzerklärung
           </a>
-          . Wir sind nicht verpflichtet und nicht bereit, an
-          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-          teilzunehmen.
+          .
         </p>
       </section>
     </LegalLayout>
