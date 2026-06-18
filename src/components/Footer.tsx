@@ -63,6 +63,16 @@ export default function Footer() {
                 </InternalLink>
               </li>
               <li>
+                <InternalLink href="/agb" className="hover:text-brand-gold transition-colors">
+                  AGB
+                </InternalLink>
+              </li>
+              <li>
+                <InternalLink href="/widerruf" className="hover:text-brand-gold transition-colors">
+                  Widerruf
+                </InternalLink>
+              </li>
+              <li>
                 <InternalLink href="/datenschutz" className="hover:text-brand-gold transition-colors">
                   Datenschutz
                 </InternalLink>
@@ -105,12 +115,18 @@ export default function Footer() {
             © {new Date().getFullYear()} {COMPANY.name}. Alle Rechte
             vorbehalten.
           </p>
-          <div className="flex gap-4 text-green-200/40 text-sm">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-green-200/40 text-sm">
             <InternalLink href="/impressum" className="hover:text-brand-gold transition-colors">
               Impressum
             </InternalLink>
             <InternalLink href="/datenschutz" className="hover:text-brand-gold transition-colors">
               Datenschutz
+            </InternalLink>
+            <InternalLink href="/agb" className="hover:text-brand-gold transition-colors">
+              AGB
+            </InternalLink>
+            <InternalLink href="/widerruf" className="hover:text-brand-gold transition-colors">
+              Widerruf
             </InternalLink>
           </div>
         </div>

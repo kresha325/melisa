@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
-import { COMPANY, THIRD_PARTY } from "@/lib/company";
+import { COMPANY, THIRD_PARTY, legalAddressBlock } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung | Die Energiesparer",
@@ -25,7 +25,7 @@ export default function DatenschutzPage() {
         <p className="mt-3">
           <strong>{COMPANY.name}</strong>
           <br />
-          {COMPANY.address}
+          {legalAddressBlock}
           <br />
           {COMPANY.country}
           <br />
@@ -55,6 +55,12 @@ export default function DatenschutzPage() {
           Personenbezogene Daten sind alle Informationen, mit denen Sie
           persönlich identifiziert werden können (z.&nbsp;B. Name, E-Mail-Adresse,
           Telefonnummer).
+        </p>
+        <p className="mt-3">
+          Diese Website und unsere Beratungsleistungen richten sich ausschließlich
+          an Personen mit Wohnsitz bzw. Geschäftssitz in{" "}
+          <strong>Deutschland</strong>. Es gilt deutsches Datenschutzrecht (DSGVO,
+          BDSG).
         </p>
       </section>
 

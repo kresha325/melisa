@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "850€", label: "Max. Ersparnis pro Jahr" },
+  { value: "850€", label: "Bis zu Ersparnis/Jahr*" },
   { value: "100%", label: "Kostenlose Beratung" },
   { value: "0€", label: "Gebühren für Wechsel" },
   { value: "24h", label: "Schnelle Rückmeldung" },
@@ -60,8 +60,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-green-100/80 mb-8 max-w-lg leading-relaxed">
-              Wir vergleichen für Sie die besten Tarife und wechseln kostenlos —
-              ohne versteckte Kosten und ohne Aufwand für Sie.
+              Energieberatung für Haushalte in Deutschland — wir vergleichen
+              Tarife und wechseln kostenlos, ohne versteckte Kosten und ohne
+              Aufwand für Sie.
             </p>
 
             <ul className="space-y-3 mb-10">
@@ -108,7 +109,7 @@ export default function Hero() {
                   850€
                 </div>
                 <p className="text-white/80 text-lg">
-                  Bis zu dieser Ersparnis pro Jahr möglich
+                  Bis zu dieser Ersparnis pro Jahr möglich*
                 </p>
               </div>
 
@@ -169,6 +170,9 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
+        <p className="text-center text-xs text-green-200/50 mt-6 max-w-2xl mx-auto">
+          * Unverbindliche Schätzung. Abhängig von Vertrag, Verbrauch und Tarif.
+        </p>
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import TrustSection from "@/components/TrustSection";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import LegalDisclaimer from "@/components/LegalDisclaimer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <FAQ />
         <ContactForm />
       </main>
+      <LegalDisclaimer />
       <Footer />
       <WhatsAppButton />
     </>

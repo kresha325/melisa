@@ -39,7 +39,8 @@ export default function SavingsCalculator() {
             Wie viel können Sie sparen?
           </h2>
           <p className="text-green-200/70 text-lg max-w-2xl mx-auto">
-            Berechnen Sie Ihr individuelles Sparpotenzial in wenigen Sekunden.
+            Unverbindliche Schätzung für Haushalte in Deutschland — in wenigen
+            Sekunden berechnet.
           </p>
         </motion.div>
 

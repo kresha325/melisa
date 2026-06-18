@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Die Energiesparer",
   },
   description:
-    "Kostenlose Beratung und Tarifwechsel für Strom und Gas. Sparen Sie bis zu 850€ pro Jahr mit Die Energiesparer.",
+    "Kostenlose Beratung und Tarifwechsel für Strom und Gas in Deutschland. Sparen Sie bis zu 850€ pro Jahr mit Die Energiesparer.",
   keywords: [
     "Strom sparen",
     "Gas sparen",

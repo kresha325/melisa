@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "Wie viel kann ich wirklich sparen?",
-    a: "Das hängt von Ihrem aktuellen Vertrag ab. Viele Haushalte sparen zwischen 200€ und 850€ pro Jahr. Mit unserem Sparrechner erhalten Sie eine erste Einschätzung.",
+    a: "Das hängt von Ihrem aktuellen Vertrag ab. Viele Haushalte in Deutschland sparen zwischen 200€ und bis zu 850€ pro Jahr. Unser Sparrechner liefert nur eine unverbindliche Erst-Einschätzung.",
   },
   {
     q: "Muss ich selbst den Anbieter wechseln?",
@@ -22,7 +22,15 @@ const faqs = [
   },
   {
     q: "Was passiert mit meinen Daten?",
-    a: "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Details finden Sie in unserer Datenschutzerklärung.",
+    a: "Ihre Daten werden zur Bearbeitung Ihrer Anfrage verwendet und über unseren Formular-Dienst per E-Mail an uns übermittelt. Details finden Sie in unserer Datenschutzerklärung.",
+  },
+  {
+    q: "Sind Sie eine Behörde oder Versorger?",
+    a: "Nein. Die Energiesparer ist ein unabhängiger Energieberater in Deutschland — keine Behörde, kein Netzbetreiber und kein gesetzlicher Energieversorger.",
+  },
+  {
+    q: "Gilt das Angebot auch außerhalb Deutschlands?",
+    a: "Nein. Unsere Beratung und Vermittlung richtet sich ausschließlich an Haushalte und Unternehmen in Deutschland.",
   },
   {
     q: "Wie schnell erhalte ich eine Rückmeldung?",

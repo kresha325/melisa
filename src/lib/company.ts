@@ -8,9 +8,22 @@ export const COMPANY = {
   hours: "Mo–Fr: 9:00 – 18:00 Uhr",
   maxSavings: "850€",
   country: "Deutschland",
+  serviceArea: "Deutschland",
   /** Vollständige Geschäftsadresse für Impressum — bitte ergänzen */
   address: "[Straße und Hausnummer, PLZ Ort]",
-  responsiblePerson: "[Name des Verantwortlichen]",
+  legalForm: "[Rechtsform, z. B. Inhaber / Einzelunternehmen]",
+  responsiblePerson: "[Name des Inhabers / Geschäftsführers]",
+  vatId: "[USt-IdNr., falls vorhanden]",
+} as const;
+
+export const LEGAL = {
+  /** Hinweis: unabhängiger Berater, keine staatliche Stelle */
+  independenceNotice:
+    "Die Energiesparer ist ein unabhängiger Energieberater und keine Behörde, kein Netzbetreiber und kein gesetzlicher Versorger.",
+  commissionNotice:
+    "Unsere Beratung ist für Sie kostenlos. Wir erhalten bei erfolgreichem Tarifwechsel eine Provision vom jeweiligen Energieanbieter — nicht von Ihnen.",
+  savingsNotice:
+    "Angaben zu möglichen Ersparnissen (z. B. bis zu 850 € pro Jahr) sind unverbindliche Schätzwerte. Die tatsächliche Ersparnis hängt von Ihrem aktuellen Vertrag, Verbrauch und Tarif ab.",
 } as const;
 
 export const THIRD_PARTY = {
@@ -30,3 +43,11 @@ export const THIRD_PARTY = {
     privacyUrl: "https://www.whatsapp.com/legal/privacy-policy-eea",
   },
 } as const;
+
+export function isPlaceholder(value: string): boolean {
+  return value.startsWith("[");
+}
+
+export const legalAddressBlock = isPlaceholder(COMPANY.address)
+  ? `${COMPANY.country} (Adresse wird im Impressum ergänzt)`
+  : `${COMPANY.address}, ${COMPANY.country}`;

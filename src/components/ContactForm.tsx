@@ -124,6 +124,39 @@ export default function ContactForm() {
 
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
+                <label htmlFor="plz" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  PLZ (Deutschland) *
+                </label>
+                <input
+                  id="plz"
+                  type="text"
+                  name="PLZ"
+                  required
+                  inputMode="numeric"
+                  pattern="[0-9]{5}"
+                  maxLength={5}
+                  title="Bitte geben Sie eine gültige deutsche Postleitzahl (5 Ziffern) ein."
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none transition-all"
+                  placeholder="25704"
+                />
+              </div>
+              <div>
+                <label htmlFor="ort" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Ort *
+                </label>
+                <input
+                  id="ort"
+                  type="text"
+                  name="Ort"
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none transition-all"
+                  placeholder="Meldorf"
+                />
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
                 <label htmlFor="strom" className="block text-sm font-medium text-gray-700 mb-1.5">
                   Stromkosten/Jahr
                 </label>
@@ -172,6 +205,33 @@ export default function ContactForm() {
               />
             </div>
 
+            <div className="flex items-start gap-3 rounded-xl border border-gray-200 bg-gray-50 p-4">
+              <input
+                id="legal-consent"
+                name="Rechtliche Einwilligung"
+                type="checkbox"
+                required
+                value="Akzeptiert"
+                className="mt-1 h-4 w-4 rounded border-gray-300 text-brand-green focus:ring-brand-green"
+              />
+              <label htmlFor="legal-consent" className="text-xs text-gray-600 leading-relaxed">
+                Ich habe die{" "}
+                <InternalLink href="/datenschutz" className="text-brand-green underline">
+                  Datenschutzerklärung
+                </InternalLink>
+                ,{" "}
+                <InternalLink href="/agb" className="text-brand-green underline">
+                  AGB
+                </InternalLink>{" "}
+                und{" "}
+                <InternalLink href="/widerruf" className="text-brand-green underline">
+                  Widerrufsbelehrung
+                </InternalLink>{" "}
+                zur Kenntnis genommen. Das Angebot gilt ausschließlich für
+                Deutschland. *
+              </label>
+            </div>
+
             <button
               type="submit"
               className="w-full flex items-center justify-center gap-2 py-4 bg-brand-green hover:bg-brand-green-dark text-white font-bold rounded-xl transition-all hover:shadow-lg hover:shadow-brand-green/30"
@@ -181,12 +241,8 @@ export default function ContactForm() {
             </button>
 
             <p className="text-xs text-gray-500 text-center">
-              Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß
-              unserer{" "}
-                  <InternalLink href="/datenschutz" className="text-brand-green underline">
-                    Datenschutzerklärung
-                  </InternalLink>{" "}
-              zu.
+              * Pflichtfeld. Unverbindliche Anfrage — kein Vertragsschluss über
+              das Formular.
             </p>
           </form>
         </div>

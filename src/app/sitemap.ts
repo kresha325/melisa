@@ -4,9 +4,14 @@ import { SITE_URL } from "@/lib/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+  const legal = { lastModified, changeFrequency: "yearly" as const, priority: 0.3 };
+
   return [
-    { url: SITE_URL, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${SITE_URL}/impressum`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/datenschutz`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: SITE_URL, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/impressum`, ...legal },
+    { url: `${SITE_URL}/datenschutz`, ...legal },
+    { url: `${SITE_URL}/agb`, ...legal },
+    { url: `${SITE_URL}/widerruf`, ...legal },
   ];
 }

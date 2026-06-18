@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { InternalLink } from "@/components/InternalLink";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, LEGAL, legalAddressBlock, isPlaceholder } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Impressum | Die Energiesparer",
@@ -18,13 +18,23 @@ export default function ImpressumPage() {
         <p>
           <strong>{COMPANY.name}</strong>
           <br />
-          Energieberatung & Tarifoptimierung
+          {COMPANY.legalForm}
           <br />
-          {COMPANY.address}
+          Energieberatung & Tarifoptimierung (ausschließlich Deutschland)
           <br />
-          {COMPANY.country}
+          {legalAddressBlock}
         </p>
+        <p className="mt-3 text-sm">{LEGAL.independenceNotice}</p>
       </section>
+
+      {!isPlaceholder(COMPANY.vatId) && (
+        <section>
+          <h2 className="text-xl font-semibold text-brand-navy mb-3">
+            Umsatzsteuer-ID
+          </h2>
+          <p>USt-IdNr.: {COMPANY.vatId}</p>
+        </section>
+      )}
 
       <section>
         <h2 className="text-xl font-semibold text-brand-navy mb-3">Kontakt</h2>
@@ -50,9 +60,7 @@ export default function ImpressumPage() {
         <p>
           {COMPANY.responsiblePerson}
           <br />
-          {COMPANY.address}
-          <br />
-          {COMPANY.country}
+          {legalAddressBlock}
         </p>
       </section>
 
@@ -129,6 +137,14 @@ export default function ImpressumPage() {
           unserer{" "}
           <InternalLink href="/datenschutz" className="text-brand-green underline">
             Datenschutzerklärung
+          </InternalLink>
+          ,{" "}
+          <InternalLink href="/agb" className="text-brand-green underline">
+            AGB
+          </InternalLink>{" "}
+          und{" "}
+          <InternalLink href="/widerruf" className="text-brand-green underline">
+            Widerrufsbelehrung
           </InternalLink>
           .
         </p>
