@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 import { COMPANY } from "@/lib/company";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     "Energiesparer",
   ],
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: assetPath("/logo.png"),
+    apple: assetPath("/logo.png"),
   },
   openGraph: {
     title: "Die Energiesparer | Strom & Gas Kosten senken",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Die Energiesparer",
     images: [
       {
-        url: "/logo.png",
+        url: "logo.png",
         width: 1536,
         height: 1024,
         alt: "Die Energiesparer Logo",
