@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/site";
+
 type LogoProps = {
   className?: string;
   height?: number;
@@ -16,7 +18,7 @@ export default function Logo({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/logo.png"
+      src={assetPath("/logo.png")}
       alt="Die Energiesparer - Strom und Gas Kosten senken"
       width={width}
       height={height}

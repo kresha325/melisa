@@ -25,16 +25,34 @@ export default function ContactForm() {
     setError("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const messageParts = [
+        formData.message?.trim(),
+        formData.strom ? `Stromkosten/Jahr: ${formData.strom}` : null,
+        formData.gas ? `Gaskosten/Jahr: ${formData.gas}` : null,
+      ].filter(Boolean);
 
-      const data = await res.json();
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(COMPANY.email)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            message: messageParts.join("\n\n") || "Keine Nachricht",
+            _subject: `Neue Website-Anfrage von ${formData.name.trim()}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        }
+      );
 
       if (!res.ok) {
-        throw new Error(data.error || "Fehler beim Senden");
+        throw new Error("Fehler beim Senden");
       }
 
       setSubmitted(true);

@@ -7,8 +7,11 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+import { COMPANY } from "@/lib/company";
+import { SITE_URL } from "@/lib/site";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://die-energiesparer.de"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Die Energiesparer | Strom & Gas Kosten senken",
     template: "%s | Die Energiesparer",

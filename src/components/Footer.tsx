@@ -22,24 +22,24 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Leistungen</h4>
             <ul className="space-y-2 text-green-200/60 text-sm">
               <li>
-                <a href="/#leistungen" className="hover:text-brand-gold transition-colors">
+                <Link href="/#leistungen" className="hover:text-brand-gold transition-colors">
                   Strom optimieren
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#leistungen" className="hover:text-brand-gold transition-colors">
+                <Link href="/#leistungen" className="hover:text-brand-gold transition-colors">
                   Gas optimieren
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#rechner" className="hover:text-brand-gold transition-colors">
+                <Link href="/#rechner" className="hover:text-brand-gold transition-colors">
                   Sparrechner
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#faq" className="hover:text-brand-gold transition-colors">
+                <Link href="/#faq" className="hover:text-brand-gold transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -48,19 +48,19 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Unternehmen</h4>
             <ul className="space-y-2 text-green-200/60 text-sm">
               <li>
-                <a href="/#ueber-uns" className="hover:text-brand-gold transition-colors">
+                <Link href="/#ueber-uns" className="hover:text-brand-gold transition-colors">
                   Über uns
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#ablauf" className="hover:text-brand-gold transition-colors">
+                <Link href="/#ablauf" className="hover:text-brand-gold transition-colors">
                   So funktioniert&apos;s
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#kontakt" className="hover:text-brand-gold transition-colors">
+                <Link href="/#kontakt" className="hover:text-brand-gold transition-colors">
                   Kontakt
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/datenschutz" className="hover:text-brand-gold transition-colors">

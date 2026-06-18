@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
@@ -34,13 +35,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <a href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group">
             <Logo
               height={scrolled ? 60 : 80}
               priority
               className="group-hover:scale-105 transition-transform duration-300 drop-shadow-lg"
             />
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
