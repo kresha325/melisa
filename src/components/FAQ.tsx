@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -32,17 +31,12 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section id="faq" className="py-24 lg:py-32 bg-brand-green-light">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-green/10 text-brand-green text-sm font-semibold mb-4">
             FAQ
           </span>
@@ -52,16 +46,12 @@ export default function FAQ() {
           <p className="text-gray-600">
             Alles Wichtige auf einen Blick — transparent beantwortet.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={faq.q}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
               className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
             >
               <button
@@ -73,26 +63,17 @@ export default function FAQ() {
                   {faq.q}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-brand-green shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-brand-green shrink-0 transition-transform duration-200 ${
                     open === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              <AnimatePresence>
-                {open === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+              {open === index && (
+                <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.a}
+                </p>
+              )}
+            </div>
           ))}
         </div>
       </div>

@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 
 const navLinks = [
@@ -81,49 +80,43 @@ export default function Header() {
               scrolled ? "text-brand-navy" : "text-white"
             }`}
             aria-label="Menü öffnen"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 shadow-xl"
-          >
-            <nav className="flex flex-col px-4 py-4 gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-brand-green-light hover:text-brand-green transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+      {isOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl">
+          <nav className="flex flex-col px-4 py-4 gap-1">
+            {navLinks.map((link) => (
               <a
-                href="tel:01753342296"
-                className="px-4 py-3 text-brand-green font-semibold flex items-center gap-2"
-              >
-                <Phone className="w-4 h-4" />
-                0175 - 3342296
-              </a>
-              <a
-                href="#kontakt"
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="mx-4 mt-2 py-3 bg-brand-green text-white text-center font-semibold rounded-full"
+                className="px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-brand-green-light hover:text-brand-green transition-colors"
               >
-                Kostenlose Beratung
+                {link.label}
               </a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <a
+              href="tel:01753342296"
+              className="px-4 py-3 text-brand-green font-semibold flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4" />
+              0175 - 3342296
+            </a>
+            <a
+              href="#kontakt"
+              onClick={() => setIsOpen(false)}
+              className="mx-4 mt-2 py-3 bg-brand-green text-white text-center font-semibold rounded-full"
+            >
+              Kostenlose Beratung
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
