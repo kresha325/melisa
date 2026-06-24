@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import Logo from "@/components/Logo";
+import { COMPANY } from "@/lib/company";
 
 const navLinks = [
   { href: "#leistungen", label: "Leistungen" },
@@ -58,13 +59,13 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:01753342296"
+              href={`tel:${COMPANY.phoneLink}`}
               className={`flex items-center gap-2 text-sm font-medium ${
                 scrolled ? "text-gray-700" : "text-white"
               }`}
             >
               <Phone className="w-4 h-4" />
-              0175 - 3342296
+              {COMPANY.phone}
             </a>
             <a
               href="#kontakt"
@@ -101,11 +102,11 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="tel:01753342296"
+              href={`tel:${COMPANY.phoneLink}`}
               className="px-4 py-3 text-brand-green font-semibold flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
-              0175 - 3342296
+              {COMPANY.phone}
             </a>
             <a
               href="#kontakt"
