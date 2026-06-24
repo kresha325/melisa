@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const isGithubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGithubPages ? "/melisa" : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (isGithubPages ? "https://dieenergiesparer.com" : "http://localhost:3000");
 
 const nextConfig: NextConfig = {
   output: isGithubPages ? "export" : undefined,
@@ -13,9 +16,7 @@ const nextConfig: NextConfig = {
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
-    NEXT_PUBLIC_SITE_URL: isGithubPages
-      ? "https://kresha325.github.io/melisa"
-      : "http://localhost:3000",
+    NEXT_PUBLIC_SITE_URL: siteUrl,
   },
 };
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { COMPANY, THIRD_PARTY, legalAddressBlock } from "@/lib/company";
+import { SITE_DOMAIN } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung | Die Energiesparer",
@@ -69,9 +70,17 @@ export default function DatenschutzPage() {
           3. Hosting (GitHub Pages)
         </h2>
         <p>
-          Diese Website wird über <strong>{THIRD_PARTY.github.name}</strong>{" "}
-          gehostet. Anbieter ist GitHub, Inc., 88 Colin P Kelly Jr St, San
-          Francisco, CA 94107, USA.
+          Diese Website wird unter{" "}
+          <strong>
+            <a
+              href={`https://${SITE_DOMAIN}`}
+              className="text-brand-green"
+            >
+              {SITE_DOMAIN}
+            </a>
+          </strong>{" "}
+          über <strong>{THIRD_PARTY.github.name}</strong> gehostet. Anbieter ist
+          GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.
         </p>
         <p className="mt-3">
           Beim Aufruf unserer Website werden automatisch Informationen an die

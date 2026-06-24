@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     siteName: "Die Energiesparer",
+    url: SITE_URL,
     images: [
       {
         url: "logo.png",
@@ -50,6 +51,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 

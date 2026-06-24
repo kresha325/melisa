@@ -1,5 +1,11 @@
+/** Production domain — used for canonical URLs, sitemap, FormSubmit redirect */
+export const SITE_DOMAIN = "dieenergiesparer.com";
+
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kresha325.github.io/melisa";
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.NODE_ENV === "production"
+    ? `https://${SITE_DOMAIN}`
+    : "http://localhost:3000");
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { InternalLink } from "@/components/InternalLink";
 import { COMPANY, LEGAL, legalAddressBlock, isPlaceholder } from "@/lib/company";
+import { SITE_DOMAIN, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum | Die Energiesparer",
@@ -47,6 +48,11 @@ export default function ImpressumPage() {
           E-Mail:{" "}
           <a href={`mailto:${COMPANY.email}`} className="text-brand-green">
             {COMPANY.email}
+          </a>
+          <br />
+          Website:{" "}
+          <a href={SITE_URL} className="text-brand-green">
+            {SITE_DOMAIN}
           </a>
           <br />
           Erreichbarkeit: {COMPANY.hours}
