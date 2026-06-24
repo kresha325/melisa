@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { InternalLink } from "@/components/InternalLink";
-import { COMPANY, LEGAL, legalAddressBlock, isPlaceholder } from "@/lib/company";
+import { COMPANY, LEGAL, legalAddressBlock } from "@/lib/company";
 import { SITE_DOMAIN, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,28 +14,33 @@ export default function ImpressumPage() {
     <LegalLayout title="Impressum">
       <section>
         <h2 className="text-xl font-semibold text-brand-navy mb-3">
-          Angaben gemäß § 5 TMG
+          Angaben gemäß § 5 DDG
         </h2>
         <p>
           <strong>{COMPANY.name}</strong>
+          <br />
+          Inhaberin: {COMPANY.owner}
           <br />
           {COMPANY.legalForm}
           <br />
           Energieberatung & Tarifoptimierung (ausschließlich Deutschland)
           <br />
-          {legalAddressBlock}
+          {COMPANY.address.street}
+          <br />
+          {COMPANY.address.zip} {COMPANY.address.city}
+          <br />
+          {COMPANY.address.country}
         </p>
         <p className="mt-3 text-sm">{LEGAL.independenceNotice}</p>
       </section>
 
-      {!isPlaceholder(COMPANY.vatId) && (
-        <section>
-          <h2 className="text-xl font-semibold text-brand-navy mb-3">
-            Umsatzsteuer-ID
-          </h2>
-          <p>USt-IdNr.: {COMPANY.vatId}</p>
-        </section>
-      )}
+      <section>
+        <h2 className="text-xl font-semibold text-brand-navy mb-3">
+          Steuernummer
+        </h2>
+        <p>Steuernummer: {COMPANY.taxId}</p>
+        <p className="mt-3 text-sm">{LEGAL.smallBusinessNotice}</p>
+      </section>
 
       <section>
         <h2 className="text-xl font-semibold text-brand-navy mb-3">Kontakt</h2>
@@ -61,7 +66,7 @@ export default function ImpressumPage() {
 
       <section>
         <h2 className="text-xl font-semibold text-brand-navy mb-3">
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+          Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
         </h2>
         <p>
           {COMPANY.responsiblePerson}
@@ -110,9 +115,9 @@ export default function ImpressumPage() {
         <p>
           Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für
           die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir
-          jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7
-          Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
-          Gesetzen verantwortlich.
+          jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß den
+          allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten
+          verantwortlich.
         </p>
         <h3 className="font-medium text-brand-navy mt-4 mb-2">
           Haftung für Links

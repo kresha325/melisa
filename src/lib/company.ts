@@ -1,5 +1,6 @@
 export const COMPANY = {
   name: "Die Energiesparer",
+  owner: "Mellissa Böttcher",
   email: "die.energiesparer@web.de",
   phone: "0175 - 3342296",
   phoneLink: "01753342296",
@@ -9,11 +10,16 @@ export const COMPANY = {
   maxSavings: "850€",
   country: "Deutschland",
   serviceArea: "Deutschland",
-  /** Vollständige Geschäftsadresse für Impressum — bitte ergänzen */
-  address: "[Straße und Hausnummer, PLZ Ort]",
-  legalForm: "[Rechtsform, z. B. Inhaber / Einzelunternehmen]",
-  responsiblePerson: "[Name des Inhabers / Geschäftsführers]",
-  vatId: "[USt-IdNr., falls vorhanden]",
+  address: {
+    street: "Brückenweg 6",
+    zip: "25797",
+    city: "Wöhrden",
+    country: "Deutschland",
+  },
+  legalForm: "Kleinunternehmen",
+  responsiblePerson: "Mellissa Böttcher",
+  /** Steuernummer (keine USt-IdNr. — Kleinunternehmerin § 19 UStG) */
+  taxId: "95374172601",
 } as const;
 
 export const LEGAL = {
@@ -24,6 +30,8 @@ export const LEGAL = {
     "Unsere Beratung ist für Sie kostenlos. Wir erhalten bei erfolgreichem Tarifwechsel eine Provision vom jeweiligen Energieanbieter — nicht von Ihnen.",
   savingsNotice:
     "Angaben zu möglichen Ersparnissen (z. B. bis zu 850 € pro Jahr) sind unverbindliche Schätzwerte. Die tatsächliche Ersparnis hängt von Ihrem aktuellen Vertrag, Verbrauch und Tarif ab.",
+  smallBusinessNotice:
+    "Als Kleinunternehmerin im Sinne von § 19 Abs. 1 UStG wird auf Rechnungen keine Umsatzsteuer ausgewiesen.",
 } as const;
 
 export const THIRD_PARTY = {
@@ -44,10 +52,6 @@ export const THIRD_PARTY = {
   },
 } as const;
 
-export function isPlaceholder(value: string): boolean {
-  return value.startsWith("[");
-}
+export const legalAddressBlock = `${COMPANY.address.street}, ${COMPANY.address.zip} ${COMPANY.address.city}, ${COMPANY.address.country}`;
 
-export const legalAddressBlock = isPlaceholder(COMPANY.address)
-  ? `${COMPANY.country} (Adresse wird im Impressum ergänzt)`
-  : `${COMPANY.address}, ${COMPANY.country}`;
+export const legalContactBlock = `${COMPANY.name}\n${COMPANY.owner}\n${legalAddressBlock}`;

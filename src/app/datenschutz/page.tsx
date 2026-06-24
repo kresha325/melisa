@@ -26,9 +26,9 @@ export default function DatenschutzPage() {
         <p className="mt-3">
           <strong>{COMPANY.name}</strong>
           <br />
-          {legalAddressBlock}
+          {COMPANY.owner}
           <br />
-          {COMPANY.country}
+          {legalAddressBlock}
           <br />
           E-Mail:{" "}
           <a href={`mailto:${COMPANY.email}`} className="text-brand-green">
